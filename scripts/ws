@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
-ps cax | grep chunkwm > /dev/null
-if [ $? -eq 0 ]; then
-  /usr/local/bin/chunkc tiling::query --desktop id
+# ps cax | grep chunkwm > /dev/null
+# if [ $? -eq 0 ]; then
+#   /usr/local/bin/chunkc tiling::query --desktop id
+# else
+#   echo ""
+# fi
+check=`ps -ef | grep "yabai" | grep -v "grep" | wc -l | cut -d " " -f8`
+
+if [ $check -ge 1 ]; then
+  index=`/usr/local/bin/yabai -m query --spaces --space | grep 'index' | sed 's/[^0-9]*//g'`
+  echo -n "$index"
 else
-  echo ""
+  echo -n ""
 fi
