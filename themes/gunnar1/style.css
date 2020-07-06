@@ -19,7 +19,7 @@
   --pecan-fg-pecanclock: #B7DCE3;
   --pecan-xanthia-fg: #9BF9E1;
   /* size */
-  --pecan-height: 16px;
+  --pecan-height: 20px;
   --pecan-xanthia-max-width: 1000px;
   --pecan-xanthia-max-height: none;
   --pecan-xanthia-min-width: none;
@@ -69,9 +69,10 @@
   --pecan-xanthia-image-border-radius-right: var(--pecan-border-radius-inner);
   --pecan-xanthia-image-border: 0px;
   /* typography */
-  --pecan-font: scientifica, SF Mono, Menlo, Monospace;
+  --pecan-font: SF Pro Rounded;
   --pecan-font-size: 12px;
   --pecan-font-style: regular;
+  --pecan-font-weight: 600;
   --pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
   --pecan-text-padding: 1ch;
   --webkit-font-smoothing: none;
@@ -89,6 +90,14 @@
 .screen {
   width: 100vw;
   height: 100vh;
+}
+
+.modenormal {
+  color: var(--pecan-fg-pecannetwork);
+}
+
+.modeportal {
+  color: var(--pecan-fg-pecannetwork);
 }
 
 /* bar background */
@@ -134,6 +143,7 @@
 .pecanworkspace {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
+  font-weight: var(--pecan-font-weight);
   color: var(--pecan-fg-pecanworkspace);
   display: inline-block;
   position: absolute;
@@ -159,6 +169,8 @@
 .pecannetwork {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
+  font-weight: var(--pecan-font-weight);
+  font-weight: var(--pecan-font-weight);
   background-color: var(--pecan-bg-pecannetwork);
   opacity: var(--pecan-opacity-inner);
   color: var(--pecan-fg-pecannetwork);
@@ -171,7 +183,34 @@
   padding: 0 var(--pecan-text-padding);
   margin-top: calc(var(--pecan-border) + var(--pecan-padding-v));
   margin-bottom: calc(var(--pecan-border) + var(--pecan-padding-v));
-  margin-left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 2) + 1ch + calc(var(--pecan-border) * 2));
+  margin-left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 2) + 15ch + calc(var(--pecan-border) * 2));
+  line-height: var(--pecan-line-height);
+  border-top-left-radius: var(--pecan-border-radius-inner);
+  border-top-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
+}
+
+/* mode -- 3rd to left */
+.pecanmode {
+  font: var(--pecan-font-size) var(--pecan-font);
+  font-style: var(--pecan-font-style);
+  font-weight: var(--pecan-font-weight);
+  font-weight: var(--pecan-font-weight);
+  background-color: var(--pecan-bg-pecannetwork);
+  opacity: var(--pecan-opacity-inner);
+  color: var(--pecan-fg-pecannetwork);
+  position: absolute;
+  display: inline-block;
+  top: var(--pecan-alignment-top);
+  right: auto;
+  bottom: var(--pecan-alignment-bottom);
+  left: 0px;
+  padding: 0 var(--pecan-text-padding);
+  margin-top: calc(var(--pecan-border) + var(--pecan-padding-v));
+  margin-bottom: calc(var(--pecan-border) + var(--pecan-padding-v));
+  margin-left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 3) + 1ch + calc(var(--pecan-border) * 3));
   line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius-inner);
   border-top-right-radius: var(--pecan-border-radius-inner);
@@ -184,6 +223,7 @@
 .pecandate {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
+  font-weight: var(--pecan-font-weight);
   color: var(--pecan-fg-pecandate);
   background-color: var(--pecan-bg-pecandate);
   opacity: var(--pecan-opacity-center);
@@ -209,6 +249,7 @@
 .pecanbattery {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
+  font-weight: var(--pecan-font-weight);
   color: var(--pecan-fg-pecanbattery);
   display: inline-block;
   position: absolute;
@@ -234,6 +275,7 @@
 .pecanclock {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
+  font-weight: var(--pecan-font-weight);
   color: var(--pecan-fg-pecanclock);
   display: inline-block;
   position: absolute;
